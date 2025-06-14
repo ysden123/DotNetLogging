@@ -8,7 +8,8 @@ namespace PSerilog
 #if DEBUG
             Log.Logger = new LoggerConfiguration()
                .MinimumLevel.Debug()
-               .Enrich.With(new ThreadIdEnricher())
+               .Enrich.WithThreadId()
+               //.Enrich.With(new ThreadIdEnricher())
                .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {SourceContext} [{ThreadId}] {Message:lj}{NewLine}{Exception}")
                .WriteTo.File("logs/PSerilog.log",
                rollingInterval: RollingInterval.Day,
@@ -17,7 +18,8 @@ namespace PSerilog
 #else
             Log.Logger = new LoggerConfiguration()
                .MinimumLevel.Error()
-               .Enrich.With(new ThreadIdEnricher())
+               .Enrich.WithThreadId()
+               //.Enrich.With(new ThreadIdEnricher())
                .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {SourceContext} [{ThreadId}] {Message:lj}{NewLine}{Exception}")
                .WriteTo.File("logs/PSerilog.log",
                rollingInterval: RollingInterval.Day,
