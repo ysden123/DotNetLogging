@@ -1,16 +1,16 @@
-= DotNetLogging
+# DotNetLogging
 
 Playing with some logging packets for projects on C#.
 
-== PNLog
+## PNLog
 
 Examples of using the NLog package.
 
-== PSerilog
+## PSerilog
 
 Examples of using the Serilog package.
 
-== PSerilogWOInit
+## PSerilogWOInit
 
 Examples of using the Serilog package without the logger initialization.
 The SilentLogger will be used and no output will be performed.
