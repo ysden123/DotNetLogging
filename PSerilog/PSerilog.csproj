@@ -15,4 +15,10 @@
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="common">
+      <HintPath>..\..\common-cs\common\bin\Release\net9.0-windows\common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

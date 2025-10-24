@@ -6,17 +6,8 @@ namespace PSerilog
     {
         static void Main(string[] args)
         {
-            string fileName= "logs/app.log";
-            Assembly? assembly = Assembly.GetExecutingAssembly();
-            if (assembly != null)
-            {
-                string? assemblyName = assembly.GetName().Name;
-                if (assemblyName != null)
-                {
-                    var folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), assemblyName);
-                    fileName = Path.Combine(folder, "logs", "app.log");
-                }
-            }
+            var folder = YSCommon.Utils.GetAssemblyFolderInLocalData();
+            string fileName = Path.Combine(folder, "logs", "app.log");
 #if DEBUG
             Log.Logger = new LoggerConfiguration()
                .MinimumLevel.Debug()
